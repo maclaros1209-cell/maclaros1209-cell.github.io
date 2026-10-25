@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -32,6 +33,7 @@
   ]
 }
 </script>
+
 <style>
   :root {
     --paper: #F6F4EF;
@@ -46,15 +48,18 @@
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
+
   html { scroll-padding-top: env(safe-area-inset-top, 0px); }
   * { box-sizing: inherit; }
   html, body { margin: 0; }
+
   body {
     background: var(--paper);
     color: var(--ink);
     font-family: 'Inter', -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
+
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --paper: var(--paper-dark);
@@ -63,6 +68,7 @@
       --rule: var(--rule-dark);
     }
   }
+
   :root[data-theme="dark"] {
     --paper: var(--paper-dark);
     --ink: var(--ink-dark);
@@ -109,7 +115,16 @@
     border-bottom: 1px solid var(--ink);
     padding-bottom: 2px;
   }
-  a.profile-link::after { content: "↗"; font-size: 13px; }
+
+  a.profile-link::after {
+    content: "↗";
+    font-size: 13px;
+  }
+
+  a.profile-link:hover {
+    color: var(--ledger);
+    border-color: var(--ledger);
+  }
 
   hr {
     border: none;
@@ -135,9 +150,22 @@
     margin-bottom: 4px;
   }
 
-  .entry-title { font-weight: 600; font-size: 15px; }
-  .entry-period { font-size: 13px; color: var(--ledger); white-space: nowrap; }
-  .entry-org { font-size: 14px; color: var(--ledger); margin-bottom: 8px; }
+  .entry-title {
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .entry-period {
+    font-size: 13px;
+    color: var(--ledger);
+    white-space: nowrap;
+  }
+
+  .entry-org {
+    font-size: 14px;
+    color: var(--ledger);
+    margin-bottom: 8px;
+  }
 
   ul.bullets {
     margin: 0;
@@ -145,8 +173,31 @@
     font-size: 14.5px;
     line-height: 1.6;
   }
+
   ul.bullets li { margin-bottom: 4px; }
   ul.bullets li:last-child { margin-bottom: 0; }
+
+  .event-subentry {
+    margin: 22px 0 0 14px;
+    padding-left: 16px;
+    border-left: 2px solid var(--rule);
+  }
+
+  .event-label {
+    margin-bottom: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .event-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+
+  .event-link { margin-top: 12px; }
 
   .research-note {
     font-size: 14.5px;
@@ -159,6 +210,7 @@
     flex-wrap: wrap;
     gap: 8px 10px;
   }
+
   .chip {
     font-size: 13px;
     padding: 6px 12px;
@@ -173,19 +225,38 @@
     color: var(--ledger);
     line-height: 1.6;
   }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 40px 20px 64px; }
+    .event-subentry { margin-left: 6px; padding-left: 12px; }
+    .entry-head { gap: 10px; }
+  }
 </style>
 </head>
+
 <body>
   <div class="wrap">
     <p class="tag">Identidad verificada</p>
+
     <h1>Miguel Angel<br>Claros Fernández</h1>
-    <p class="role">Estudiante de Ingeniería Financiera y de Riesgos, Universidad Privada del Valle · Cochabamba, Bolivia</p>
-    <a class="profile-link" href="https://www.linkedin.com/in/miguelangelclarosfernandez" target="_blank" rel="noopener">Ver perfil de LinkedIn</a>
+
+    <p class="role">
+      Estudiante de Ingeniería Financiera y de Riesgos,
+      Universidad Privada del Valle · Cochabamba, Bolivia
+    </p>
+
+    <a
+      class="profile-link"
+      href="https://www.linkedin.com/in/miguelangelclarosfernandez"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Ver perfil de LinkedIn</a>
 
     <hr>
 
     <section>
       <h2>Formación académica</h2>
+
       <div class="entry">
         <div class="entry-head">
           <span class="entry-title">Licenciatura en Ingeniería Financiera y de Riesgos</span>
@@ -193,6 +264,7 @@
         </div>
         <div class="entry-org">Universidad Privada del Valle</div>
       </div>
+
       <div class="entry">
         <div class="entry-head">
           <span class="entry-title">Bachiller en Humanidades</span>
@@ -212,13 +284,46 @@
           <span class="entry-title">Presidente</span>
           <span class="entry-period">2026</span>
         </div>
-        <div class="entry-org">SOCIFIN – Sociedad Científica de Estudiantes de Ingeniería Financiera</div>
+
+        <div class="entry-org">
+          SOCIFIN – Sociedad Científica de Estudiantes de Ingeniería Financiera
+        </div>
+
         <ul class="bullets">
-          <li>Lider de la dirección estratégica y coordinación general de la sociedad científica.</li>
+          <li>Liderazgo de la dirección estratégica y coordinación general de la sociedad científica.</li>
           <li>Gestión de equipos de trabajo y proyectos académicos en el área financiera.</li>
-          <li>Representación a la organización ante autoridades y actores externos.</li>
-          <li>Impulsador de iniciativas de investigación y actividades de formación académica.</li>
+          <li>Representación de la organización ante autoridades y actores externos.</li>
+          <li>Impulso de iniciativas de investigación y actividades de formación académica.</li>
         </ul>
+
+        <div class="event-subentry">
+          <p class="tag event-label">
+            Evento destacado · Organización y exposición
+          </p>
+
+          <div class="entry-title event-title">
+            Finanzas en Transformación: El Futuro del Ingeniero Financiero en Bolivia
+          </div>
+
+          <div class="entry-org">
+            SOCIFIN – UNIVALLE · Cochabamba, Bolivia
+          </div>
+
+          <ul class="bullets">
+            <li>Exposición sobre el contexto del sistema financiero boliviano hasta 2025, con énfasis en rentabilidad, crédito y resiliencia.</li>
+            <li>Participación junto a expertos en el sistema financiero como Jorge Basta, gerente regional de ASOBAN, y Jorge Zamora, gerente regional de BISA Seguros, compartiendo una perspectiva estudiantil.</li>
+            <li>Organización y participación como expositor en un panel sobre los desafíos y las perspectivas del sistema financiero boliviano.</li>
+          </ul>
+
+          <p class="event-link">
+            <a
+              class="profile-link"
+              href="https://www.instagram.com/p/Dex1NRum69n/?vrfl=ZGVxMDAzN3RjaDl4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Ver publicación del evento en Instagram</a>
+          </p>
+        </div>
       </div>
 
       <div class="entry">
@@ -226,11 +331,15 @@
           <span class="entry-title">Director de Investigación</span>
           <span class="entry-period">2025</span>
         </div>
-        <div class="entry-org">SOCIFIN – Sociedad Científica de Estudiantes de Ingeniería Financiera</div>
+
+        <div class="entry-org">
+          SOCIFIN – Sociedad Científica de Estudiantes de Ingeniería Financiera
+        </div>
+
         <ul class="bullets">
-          <li>Dirirección y coordinación de proyectos de investigación en el área financiera.</li>
-          <li>Líder de equipos académicos en el desarrollo y ejecución de estudios.</li>
-          <li>Participación en protocolo de investigación sobre conocimiento y adopción de Fintech.</li>
+          <li>Dirección y coordinación de proyectos de investigación en el área financiera.</li>
+          <li>Liderazgo de equipos académicos en el desarrollo y ejecución de estudios.</li>
+          <li>Participación en un protocolo de investigación sobre conocimiento y adopción de Fintech.</li>
         </ul>
       </div>
 
@@ -239,11 +348,13 @@
           <span class="entry-title">Coordinador Principal, Trabajo Social</span>
           <span class="entry-period">2023</span>
         </div>
+
         <div class="entry-org">CELCO</div>
+
         <ul class="bullets">
-          <li>Lider de un equipo de ~80 personas en un proyecto social en Norte de Potosí.</li>
+          <li>Liderazgo de un equipo de aproximadamente 80 personas en un proyecto social en el norte de Potosí.</li>
           <li>Coordinación de la planificación, logística y desarrollo de actividades comunitarias durante un año.</li>
-          <li>Gestión la recaudación de fondos y recursos para el proyecto.</li>
+          <li>Gestión de la recaudación de fondos y recursos para el proyecto.</li>
         </ul>
       </div>
 
@@ -252,7 +363,10 @@
           <span class="entry-title">Modelo de Naciones Unidas (MUN)</span>
           <span class="entry-period">2018 – 2023</span>
         </div>
-        <div class="entry-org">Delegación Latinoamericana e independiente · Reconocimiento "Mejor delegado"</div>
+
+        <div class="entry-org">
+          Delegación latinoamericana e independiente · Reconocimiento «Mejor delegado»
+        </div>
       </div>
     </section>
 
@@ -260,12 +374,16 @@
 
     <section>
       <h2>Investigación en curso</h2>
+
       <div class="entry">
         <div class="entry-head">
           <span class="entry-title">Investigación en Derivados Financieros</span>
           <span class="entry-period">2026 – Presente</span>
         </div>
-        <p class="research-note">Desarrollo de una propuesta para la implementación de un mercado de futuros en Bolivia: análisis de viabilidad financiera, regulatoria y estructural, y evaluación de las condiciones económicas e institucionales necesarias para su funcionamiento.</p>
+
+        <p class="research-note">
+          Desarrollo de una propuesta para la implementación de un mercado de futuros en Bolivia: análisis de viabilidad financiera, regulatoria y estructural, y evaluación de las condiciones económicas e institucionales necesarias para su funcionamiento.
+        </p>
       </div>
     </section>
 
@@ -273,6 +391,7 @@
 
     <section>
       <h2>Competencias</h2>
+
       <div class="chips">
         <span class="chip">Análisis financiero</span>
         <span class="chip">Investigación académica</span>
@@ -284,7 +403,9 @@
       </div>
     </section>
 
-    <footer>Esta página confirma que el perfil de LinkedIn enlazado arriba pertenece a Miguel Angel Claros Fernández.</footer>
+    <footer>
+      Esta página confirma que el perfil de LinkedIn enlazado arriba pertenece a Miguel Angel Claros Fernández.
+    </footer>
   </div>
 </body>
 </html>
